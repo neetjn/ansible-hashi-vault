@@ -1,0 +1,14 @@
+---
+
+- name: Setup hashi vault instance
+  hosts: vault | localhost
+  post_tasks:
+    - name: Include NGINX role
+      include_role:
+        name: nginx
+      when: vault_host is defined
+  roles:
+    - common
+    - vault
+  become: True
+

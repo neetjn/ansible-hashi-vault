@@ -1,0 +1,18 @@
+server {
+    listen 80;
+
+    server_name {{vault_host}};
+
+    location / {
+        proxy_pass http://{{inventory_hostname}}:{{vault_port}};
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+        proxy_read_timeout 900;
+        location /v1/ {
+            proxy_pass http://{{inventory_hostname}}:{{vault_port}}/v1/;
+        }
+    }
+}
