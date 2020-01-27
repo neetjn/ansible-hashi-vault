@@ -33,7 +33,7 @@ Then run your playbook,
 ansible-playbook playbook.yml -i hosts
 ```
 
-Additionally if you would like to setup NGINX, add `--extra-vars "registry_host=mydomain.com"` to then end of your ansible-playbook command.
+Additionally if you would like to setup NGINX, add `--extra-vars "vault_host=mydomain.com"` to then end of your ansible-playbook command.
 
 ---
 
