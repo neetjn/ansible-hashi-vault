@@ -3,4 +3,5 @@
 ansible_ssh_user: root
 ansible_ssh_pass: root
 vault_port: 8200
+vault_root_token_id: QjqL0a1nFUWZWQ4
 
